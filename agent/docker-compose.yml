@@ -13,8 +13,4 @@ services:
     restart: always
     #container_name: azure_user_agent
     #hostname: LORIEN-DOCKER-01
-    privileged: true
-    volumes:
-      # to use it, run sudo chmod 666 /var/run/docker.sock on your host to enable access from the docker container
-      - /var/run/docker.sock:/var/run/docker.sock
 
