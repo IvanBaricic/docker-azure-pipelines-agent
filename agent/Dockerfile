@@ -32,6 +32,15 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 RUN apt-get install -y powershell
 # openjdk
 RUN apt-get install -y default-jdk
+ENV JAVA_HOME_11_X64=/usr/lib/jvm/java-11-openjdk-amd64
+# maven
+RUN apt-get install -y maven
+# docker cli
+RUN curl -fSsL https://download.docker.com/linux/static/stable/x86_64/docker-20.10.7.tgz -o docker.tgz && \
+  tar xzvf docker.tgz --strip 1 -C /usr/local/bin docker/docker && \
+  rm docker.tgz
+RUN curl -fSsL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose
 # cleanup
 RUN apt-get autoremove -y
 # agent:

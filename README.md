@@ -164,6 +164,7 @@ Plus:
 * Azure CLI
 * PowerShell Core (pwsh - latest stable)
 * Openjdk (latest LTS)
+* Maven
 * Docker CLI
 * docker-compose
 
