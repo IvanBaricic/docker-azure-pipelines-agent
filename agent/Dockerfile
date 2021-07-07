@@ -28,6 +28,7 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
     curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     apt-get update && \
     apt-get install -y azure-cli
+ENV azurecli=true
 # pwsh:
 RUN apt-get install -y powershell
 # openjdk
